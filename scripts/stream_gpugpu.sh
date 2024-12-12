@@ -15,9 +15,9 @@ for gcd in $NEIGHBORS_GCD; do
         # 8 bytes per element
         printf "$((elems * 8)),"
 
-        GCD_ALLOC=$gcd GCD_EXEC=0 ./streamp2p -c -f -n $elems -b 128 
-        # HIP_VISIBLE_DEVICES="0,$gcd" ./streamp2p -c -f -n $elems -b 128 
-        
+        GCD_ALLOC=$gcd GCD_EXEC=0 ./stream_gpugpu -c -f -n $elems -b 128
+        # HIP_VISIBLE_DEVICES="0,$gcd" ./streamp2p -c -f -n $elems -b 128
+
         elems=$((elems*2))
     done
 done
