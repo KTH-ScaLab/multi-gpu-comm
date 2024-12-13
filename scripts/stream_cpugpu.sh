@@ -1,11 +1,11 @@
 #!/bin/sh
-# execute stream_multigpu, with various number of visible GPUs
+# execute stream_cpugpu, with various number of visible GPUs
 
 set -e
 
 # 8GB array of 8-byte elements (double)
 elems=1073741824
-cmd="./stream_multigpu -n $elems -b 128 -c -f"
+cmd="./stream_cpugpu -n $elems -b 128 -c -f"
 
 header='Copy (Max) / GiB/s, Copy (Min) / GiB/s, Copy (Avg) / GiB/s, Scale (Max) / GiB/s, Scale (Min) / GiB/s, Scale (Avg) / GiB/s, Add (Max) / GiB/s, Add (Min) / GiB/s, Add (Avg) / GiB/s, Triad (Max) / GiB/s, Triad (Min) / GiB/s, Triad (Avg) / GiB/s'
 
