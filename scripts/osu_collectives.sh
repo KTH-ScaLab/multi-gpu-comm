@@ -17,6 +17,7 @@ function run_exp() {
     for op in $ops; do
         cmd="./osu_$op -m$n:$n -d rocm D D"
 
+<<<<<<< HEAD
         HIP_VISIBLE_DEVICE=0,1             srun -n2 $cmd
         HIP_VISIBLE_DEVICE=0,1,6           srun -n3 $cmd
         HIP_VISIBLE_DEVICE=0,1,6,7         srun -n4 $cmd
@@ -24,6 +25,15 @@ function run_exp() {
         HIP_VISIBLE_DEVICE=0,1,6,7,2,3     srun -n6 $cmd
         HIP_VISIBLE_DEVICE=0,1,6,7,2,3,4   srun -n7 $cmd
         HIP_VISIBLE_DEVICE=0,1,6,7,3,2,4,6 srun -n8 $cmd
+=======
+        HIP_VISIBLE_DEVICES=0,1             srun -n2 $cmd
+        HIP_VISIBLE_DEVICES=0,1,6           srun -n3 $cmd
+        HIP_VISIBLE_DEVICES=0,1,6,7         srun -n4 $cmd
+        HIP_VISIBLE_DEVICES=0,1,6,7,2       srun -n5 $cmd
+        HIP_VISIBLE_DEVICES=0,1,6,7,2,3     srun -n6 $cmd
+        HIP_VISIBLE_DEVICES=0,1,6,7,2,3,4   srun -n7 $cmd
+        HIP_VISIBLE_DEVICES=0,1,6,7,3,2,4,6 srun -n8 $cmd
+>>>>>>> internal
     done
 }
 
